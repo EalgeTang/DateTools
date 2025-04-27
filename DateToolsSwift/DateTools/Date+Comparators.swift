@@ -44,7 +44,7 @@ public extension Date {
      *  - returns: A TimeChunk representing the time between the dates, in natural form
      */
     func chunkBetween(date: Date) -> TimeChunk {
-        let compenentsBetween = Calendar.autoupdatingCurrent.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self, to: date)
+        let compenentsBetween = Calendar(identifier: .gregorian).dateComponents([.year, .month, .day, .hour, .minute, .second], from: self, to: date)
         return TimeChunk(seconds: compenentsBetween.second!, minutes: compenentsBetween.minute!, hours: compenentsBetween.hour!, days: compenentsBetween.day!, weeks: 0, months: compenentsBetween.month!, years: compenentsBetween.year!)
         // TimeChunk(seconds: secondDelta, minutes: minuteDelta, hours: hourDelta, days: dayDelta, weeks: 0, months: monthDelta, years: yearDelta)
     }
@@ -128,7 +128,7 @@ public extension Date {
      *  - returns: True if both paramter dates fall on the same day, false otherwise
      */
     static func isSameDay(date: Date, as compareDate: Date) -> Bool {
-        let calendar = Calendar.autoupdatingCurrent
+        let calendar = Calendar(identifier: .gregorian)
         var components = calendar.dateComponents([.era, .year, .month, .day], from: date)
         let dateOne = calendar.date(from: components)
         
@@ -262,7 +262,7 @@ public extension Date {
     func years(from date: Date, calendar: Calendar?) -> Int {
         var calendarCopy = calendar
         if (calendar == nil) {
-            calendarCopy = Calendar.autoupdatingCurrent
+            calendarCopy = Calendar(identifier: .gregorian)
         }
         
         let earliest = earlierDate(date)
@@ -286,7 +286,7 @@ public extension Date {
     func months(from date: Date, calendar: Calendar?) -> Int {
         var calendarCopy = calendar
         if (calendar == nil) {
-            calendarCopy = Calendar.autoupdatingCurrent
+            calendarCopy = Calendar(identifier: .gregorian)
         }
         
         let earliest = earlierDate(date)
@@ -310,7 +310,7 @@ public extension Date {
     func weeks(from date: Date, calendar: Calendar?) -> Int {
         var calendarCopy = calendar
         if (calendar == nil) {
-            calendarCopy = Calendar.autoupdatingCurrent
+            calendarCopy = Calendar(identifier: .gregorian)
         }
         
         let earliest = earlierDate(date)
@@ -334,7 +334,7 @@ public extension Date {
     func days(from date: Date, calendar: Calendar?) -> Int {
         var calendarCopy = calendar
         if (calendar == nil) {
-            calendarCopy = Calendar.autoupdatingCurrent
+            calendarCopy = Calendar(identifier: .gregorian)
         }
         
         let earliest = earlierDate(date)

@@ -1,5 +1,5 @@
 ![Banner](https://raw.githubusercontent.com/MatthewYork/Resources/master/DateTools/DateToolsHeader2.png)
-
+## 主要修改内容为将日历固定为公历,不收佛历和日本历等其他日历的影响
 ## DateTools
 
 DateTools was written to streamline date and time handling in iOS. Classes and concepts from other languages served as an inspiration for DateTools, especially the [DateTime](http://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110).aspx) structure and [Time Period Library](http://www.codeproject.com/Articles/168662/Time-Period-Library-for-NET) for .NET. Through these classes and others, DateTools removes the boilerplate required to access date components, handles more nuanced date comparisons, and serves as the foundation for entirely new concepts like Time Periods and their collections.

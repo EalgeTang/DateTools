@@ -36,7 +36,7 @@ public extension Date {
 		dateComponents.minute = minute
 		dateComponents.second = second
 		
-		guard let date = Calendar.current.date(from: dateComponents) else {
+        guard let date = Calendar(identifier: .gregorian).date(from: dateComponents) else {
 			self = Date()
 			return
 		}
